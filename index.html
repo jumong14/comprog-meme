@@ -171,23 +171,48 @@ const G = {
   clip:    {src:T("LTyAiwyRBowAAAAC/cat-cat-meme"),        e:"🐈‍⬛", alt:"แมวดำยืน"},
   dj:      {src:T("QMJSvfTVVywAAAAd/bynd"),                e:"🐱💿", alt:"แมวหมุนบนแผ่นเสียง"},
   dance:   {src:T("aNKgtdT5ymEAAAAC/cat-dance-cat"),       e:"🐱🐱💃", alt:"ลูกแมวเต้น"},
+  moodeng: {src:T("DLAzk6Q5toUAAAAd/moo-deng-moo-deng-scream"), e:"🦛", alt:"หมูเด้งร้อง"},
+  cheems:  {src:T("-1pQ-knqHRsAAAAC/vueltas-cheems"),     e:"🐕", alt:"หมาชีมส์หมุนตัว"},
+  doge:    {src:T("CWHdjtoLXToAAAAC/among-us"),            e:"🐕🤨", alt:"หมาด็อจ"},
+  dogdance:{src:T("pxtzK-3cSr0AAAAd/dancing-dog-ai"),      e:"🐶💃", alt:"หมาเต้น"},
+  sadham:  {src:T("OroVCOXbuUUAAAAC/sadhamstergirl"),      e:"🐹🥺", alt:"แฮมสเตอร์ตาแป๋ว"},
+  hamstare:{src:T("9RCIDZjkhBsAAAAC/hamster-meme"),        e:"🐹😐", alt:"แฮมสเตอร์จ้องกล้อง"},
+  rat:     {src:T("YgrLNrQ522sAAAAd/rat-dance"),           e:"🐭🎶", alt:"หนูเต้น"},
 };
 const gif = (k,cls="gif") => `<img class="${cls}" src="${G[k].src}" alt="${G[k].alt}" loading="eager" onerror="this.outerHTML='<div class=&quot;fallback&quot; role=&quot;img&quot; aria-label=&quot;${G[k].alt}&quot;>${G[k].e}</div>'">`;
 const gbox = (k,style="") => `<div class="gifbox" style="${style}">${gif(k)}</div>`;
 
-// ✏️ แก้รายชื่อสาขาได้ตรงนี้
-const MAJORS = [
-  {id:"acc",  ico:"🧮", name:"การบัญชี",            sub:"รักตัวเลข เกลียดเงินทอนขาด", top:"อยากเรียนบัญชี", bot:"Excel ก็คือโปรแกรมนะ 🤓"},
-  {id:"mkt",  ico:"📢", name:"การตลาด",             sub:"ขายของเก่ง ขายฝันเก่งกว่า",   top:"อยากเป็นนักการตลาด", bot:"ยิงแอดยังต้องใช้อัลกอริทึมเลย"},
-  {id:"dbt",  ico:"💼", name:"เทคโนโลยีธุรกิจดิจิทัล", sub:"ธุรกิจ + ดิจิทัล = ?",          top:"ดิจิทัลก็ดีนะ", bot:"แต่ใครเขียนระบบดิจิทัลล่ะ? 👀"},
-  {id:"htl",  ico:"🏨", name:"การโรงแรม",            sub:"ยิ้มสวย พับผ้าเป็นหงส์",       top:"อยากทำงานโรงแรม", bot:"ระบบจองห้องใครเขียนล่ะจ๊ะ"},
-  {id:"trv",  ico:"✈️", name:"การท่องเที่ยว",        sub:"อยากเที่ยวฟรีทั่วโลก",         top:"อยากเที่ยวรอบโลก", bot:"โปรแกรมเมอร์ทำงานที่ไหนก็ได้นะ 🏝️"},
-  {id:"fsh",  ico:"👗", name:"แฟชั่นและสิ่งทอ",      sub:"ปังทุกลุค",                     top:"แฟชั่นต้องปัง", bot:"Dark mode ก็คือแฟชั่นของสายโค้ด"},
-  {id:"food", ico:"🍳", name:"อาหารและโภชนาการ",     sub:"ทำกับข้าวอร่อยมาก",            top:"ชอบทำอาหาร", bot:"เขียนโค้ดก็เหมือนทำสูตรอาหารแหละ 🍝"},
-  {id:"gfx",  ico:"🎨", name:"ดิจิทัลกราฟิก",        sub:"วาดสวย ตัดต่อเก่ง",            top:"ชอบออกแบบ", bot:"ออกแบบแล้วให้มันขยับได้ด้วยสิ!"},
-  {id:"lang", ico:"🗣️", name:"ภาษาต่างประเทศ",       sub:"Hello / こんにちは / 你好",     top:"อยากเก่งหลายภาษา", bot:"Python, Java, C# ก็ภาษานะ 😏"},
-  {id:"cp",   ico:"💻", name:"คอมพิวเตอร์โปรแกรมเมอร์", sub:"ตัวเลือกของคนตาถึง",       top:"ตาถึงมากกก 😎", bot:"แต่ก็ต้องดูมีมให้ครบก่อนนะ"}
-];
+// ✏️ คำแซวของแต่ละสาขา (ใช้ร่วมกันทั้ง ปวช./ปวส.)
+const R = {
+  acc:   {ico:"🧮", g:"hamstare", sub:"รักตัวเลข เกลียดเงินทอนขาด",   top:"อยากเรียนบัญชี",        bot:"Excel ก็คือโปรแกรมนะ 🤓"},
+  mkt:   {ico:"📢", g:"doge",     sub:"ขายของเก่ง ขายฝันเก่งกว่า",     top:"อยากเป็นนักการตลาด",     bot:"ยิงแอดยังต้องใช้อัลกอริทึมเลย"},
+  retail:{ico:"🛒", g:"huh",      sub:"ยืนหน้าร้าน ทอนเงินไว",         top:"อยากทำธุรกิจค้าปลีก",    bot:"ระบบ POS หน้าร้านใครเขียนล่ะ? 👀"},
+  office:{ico:"🗂️", g:"cheems",   sub:"จัดแฟ้มเป๊ะ ไฟล์ไม่หาย",        top:"ชอบจัดเอกสาร",          bot:"เขียนโค้ดให้มันจัดเอง 1 วิ เสร็จ"},
+  home:  {ico:"🧺", g:"sadham",   sub:"งานบ้านงานครัว เป๊ะทุกอย่าง",    top:"สายคหกรรม",             bot:"เขียนโปรแกรมสั่งหุ่นยนต์ทำแทนสิ 🤖"},
+  htl:   {ico:"🏨", g:"doge",     sub:"ยิ้มสวย พับผ้าเป็นหงส์",         top:"อยากทำงานโรงแรม",       bot:"ระบบจองห้องใครเขียนล่ะจ๊ะ"},
+  trv:   {ico:"✈️", g:"moodeng",  sub:"อยากเที่ยวฟรีทั่วโลก",           top:"อยากเที่ยวรอบโลก",       bot:"โปรแกรมเมอร์ทำงานที่ไหนก็ได้นะ 🏝️"},
+  food:  {ico:"🍳", g:"hamstare", sub:"ทำกับข้าวอร่อยมาก",              top:"ชอบทำอาหาร",            bot:"เขียนโค้ดก็เหมือนทำสูตรอาหารแหละ 🍝"},
+  design:{ico:"✏️", g:"think",    sub:"ไอเดียเยอะ สเก็ตช์ไว",            top:"ชอบออกแบบ",             bot:"ออกแบบแอปแล้วเขียนให้ใช้ได้จริงสิ!"},
+  gfx:   {ico:"🎨", g:"huh",      sub:"วาดสวย ตัดต่อเก่ง",              top:"วาดเก่ง ตัดต่อเก่ง",      bot:"ทำเกมเองไปเลยสิ 🎮"},
+  fsh:   {ico:"👗", g:"cheems",   sub:"ปังทุกลุค",                       top:"แฟชั่นต้องปัง",           bot:"Dark mode ก็คือแฟชั่นของสายโค้ด"},
+  dbt:   {ico:"💼", g:"shock",    sub:"ธุรกิจ + ดิจิทัล",                top:"ใกล้แล้ว! อีกนิดเดียว",    bot:"ขยับมาอีกช่องก็คอมโปรแล้ว 😏"},
+  cp:    {ico:"💻", g:"vibe",     sub:"ตัวเลือกของคนตาถึง",             top:"ตาถึงมากกก 😎",          bot:"แต่ก็ต้องดูมีมให้ครบก่อนนะ"},
+};
+// ✏️ รายชื่อสาขาแต่ละระดับ [รหัสคำแซว, ชื่อสาขา, ประเภทวิชา]
+const LEVELS = {
+  pvc:{label:"ปวช.", full:"ประกาศนียบัตรวิชาชีพ (ปวช.)", list:[
+    ["acc","การบัญชี","บริหารธุรกิจ"],["mkt","การตลาด","บริหารธุรกิจ"],["retail","ธุรกิจค้าปลีก (ทวิภาคี)","บริหารธุรกิจ"],
+    ["office","การจัดการสำนักงานดิจิทัล","บริหารธุรกิจ"],["home","คหกรรมศาสตร์","คหกรรม"],["htl","การโรงแรม","อุตสาหกรรมท่องเที่ยว"],
+    ["trv","การท่องเที่ยว","อุตสาหกรรมท่องเที่ยว"],["food","อาหารและโภชนาการ","อุตสาหกรรมอาหาร"],["design","การออกแบบ","ศิลปกรรมฯ"],
+    ["gfx","ดิจิทัลกราฟิก","ศิลปกรรมฯ"],["fsh","แฟชั่นและสิ่งทอ","อุตสาหกรรมแฟชั่นฯ"],["cp","คอมพิวเตอร์โปรแกรมเมอร์","ดิจิทัลและไอที"],
+    ["dbt","เทคโนโลยีธุรกิจดิจิทัล","ดิจิทัลและไอที"]]},
+  pvs:{label:"ปวส.", full:"ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)", list:[
+    ["acc","การบัญชี","บริหารธุรกิจ"],["mkt","การตลาด (ทวิภาคี)","บริหารธุรกิจ"],["retail","การจัดการธุรกิจค้าปลีก (ทวิภาคี)","บริหารธุรกิจ"],
+    ["office","การจัดการสำนักงานดิจิทัล","บริหารธุรกิจ"],["home","การบริหารงานคหกรรมศาสตร์","คหกรรม"],["htl","การโรงแรม (ทวิภาคี)","อุตสาหกรรมท่องเที่ยว"],
+    ["food","อาหารและโภชนาการ (ทวิภาคี)","อุตสาหกรรมอาหาร"],["gfx","ดิจิทัลกราฟิก","ศิลปกรรมฯ"],["cp","คอมพิวเตอร์โปรแกรมเมอร์","ดิจิทัลและไอที"],
+    ["dbt","เทคโนโลยีธุรกิจดิจิทัล","ดิจิทัลและไอที"],["dbt","เทคโนโลยีธุรกิจดิจิทัล (ทวิภาคี)","ดิจิทัลและไอที"]]}
+};
+let level="pvc";
 
 let picked=null, sceneIdx=-1, runCount=0, muted=false, timers=[];
 const stage=document.getElementById("stage"), stepEl=document.getElementById("step");
@@ -220,19 +245,24 @@ const wire=()=>$$("[data-next]").forEach(b=>b.onclick=next);
 
 function home(){
   sceneIdx=-1;picked=null;runCount=0;stepEl.textContent="หน้าแรก";
+  const L=LEVELS[level];const homeG=["think","doge","hamstare","cheems","moodeng"][Math.floor(Math.random()*5)];
   render(`
-    <div class="reaction gifbox" style="max-width:120px">${gif("think")}</div>
+    <div class="reaction gifbox" style="max-width:120px">${gif(homeG)}</div>
     <h1>เลือกสาขาที่ <span class="hl">ใช่</span> สำหรับคุณ</h1>
     <p class="lead">วิทยาลัยอาชีวศึกษาสุพรรณบุรีมีหลายสาขาให้เลือก กดเลือกได้ตามใจเลย…<br><small>(ระบบรับประกันว่าคุณจะได้สาขาที่เหมาะที่สุด 100% 🙂)</small></p>
-    <div class="grid" style="clear:both">${MAJORS.map(m=>`<button class="major" data-id="${m.id}"><span class="ico" aria-hidden="true">${m.ico}</span><b>${m.name}</b><small>${m.sub}</small></button>`).join("")}</div>`);
-  $$(".major").forEach(b=>b.onclick=()=>{picked=MAJORS.find(m=>m.id===b.dataset.id);meow();next()});
+    <div class="row" role="group" aria-label="เลือกระดับชั้น" style="clear:both;margin:0 0 16px">
+      ${Object.entries(LEVELS).map(([k,v])=>`<button class="btn ${k===level?"":"alt"}" data-lv="${k}" aria-pressed="${k===level}">${v.label}${k==="pvc"?" (จบ ม.3)":" (จบ ม.6/ปวช.)"}</button>`).join("")}
+    </div>
+    <div class="grid">${L.list.map(([id,name,type],i)=>`<button class="major" data-i="${i}"><span class="ico" aria-hidden="true">${R[id].ico}</span><b>${name}</b><small>${type} · ${R[id].sub}</small></button>`).join("")}</div>`);
+  $$("[data-lv]").forEach(b=>b.onclick=()=>{level=b.dataset.lv;home()});
+  $$(".major").forEach(b=>b.onclick=()=>{const [id,name]=L.list[+b.dataset.i];picked={id,name,...R[id]};meow();next()});
 }
 
 const SCENES = [
 /* 1 roast */ ()=>{render(`
   <h2>คุณเลือก “${picked.name}”</h2>
   <div class="meme"><div class="bigemoji" aria-hidden="true">${picked.ico}</div><div class="cap top">${picked.top}</div><div class="cap bot">${picked.bot}</div></div>
-  <div class="duo"><div class="gifbox" style="max-width:none">${gif("huh")}</div><div class="card" style="display:grid;place-items:center;text-align:center;font-weight:800">ปฏิกิริยาครูแนะแนว<br>ตอนเห็นคำตอบ 👆</div></div>
+  <div class="duo"><div class="gifbox" style="max-width:none">${gif(picked.g||"huh")}</div><div class="card" style="display:grid;place-items:center;text-align:center;font-weight:800">ปฏิกิริยาครูแนะแนว<br>ตอนเห็นคำตอบ 👆</div></div>
   <div class="row" style="justify-content:center"><button class="btn" data-next>เออ… จริงด้วย</button><button class="btn alt" data-next>ไม่จริง! ไปต่อ</button></div>`);wire()},
 
 /* 2 loading 404 */ ()=>{render(`
@@ -242,7 +272,7 @@ const SCENES = [
   let p=0;const t=every(()=>{p+=Math.random()*14;if(p>=99){p=99;clearInterval(t);
     later(()=>{fail();$("#errbox").innerHTML=`<div class="err">ERROR 404: ไม่พบเส้นทางไปสาขา "${pname()}"
 สาเหตุ: GPS ของชีวิตถูกตั้งค่าไว้ที่ → คอมพิวเตอร์โปรแกรมเมอร์
-กำลัง Redirect อัตโนมัติ...</div>${nextBtn("โอเค งงแต่ไปต่อ","blue")}`;wire()},700)}
+กำลัง Redirect อัตโนมัติ...</div><div class="gifbox" style="max-width:220px;margin-top:16px">${gif("moodeng")}</div>${nextBtn("โอเค งงแต่ไปต่อ","blue")}`;wire()},700)}
     $("#pb").style.width=p+"%";$("#pct").textContent=Math.floor(p)+"%"},180)},
 
 /* 3 offline game */ ()=>{render(`
@@ -281,7 +311,7 @@ const SCENES = [
   addEventListener("keydown",key);cv.addEventListener("pointerdown",e=>{e.preventDefault();jump()});
   $("#jump").onclick=jump;$("#skip").onclick=()=>{run=false;cancelAnimationFrame(raf);removeEventListener("keydown",key);next()}},
 
-/* 4 captcha */ ()=>{const pics=["computer","hacker","vibe","think","computer","dj","clip","hacker","thumbs"];
+/* 4 captcha */ ()=>{const pics=["computer","doge","vibe","hamstare","hacker","cheems","clip","sadham","thumbs"];
   render(`
   <h2>ยืนยันว่าคุณไม่ใช่หุ่นยนต์ 🤖</h2>
   <div class="captcha"><div class="head">เลือกทุกภาพที่มี<b>ว่าที่โปรแกรมเมอร์</b>หากไม่มีแล้ว ให้คลิก ยืนยัน</div>
@@ -333,7 +363,7 @@ const SCENES = [
   function answer(){clearInterval(ring);const ph=$("#phone");
     ph.innerHTML=`<b>แผนกคอมโปร</b><small style="opacity:.7">00:0<span id="sec">0</span></small><div class="chat" id="chat"></div><div class="row" id="cn" style="justify-content:center;margin-top:auto"></div>`;
     let s=0;every(()=>{const e=$("#sec");if(e)e.textContent=(++s%10)},1000);
-    const msgs=[["them","ฮัลโหล น้อง"+(picked.id==="cp"?"":"ที่จะไป"+picked.name)+"ใช่มั้ยคะ 😊"],["me","ใช่ครับ/ค่ะ…"],["them","พอดีระบบเราแจ้งว่าน้องมีแววเป็นโปรแกรมเมอร์ 98.7%"],["me","เอ๊ะ ระบบอะไร"],["them","ระบบที่รุ่นพี่เขียนเองนี่แหละ 😎 น้องก็เขียนได้นะ"],["me","…น่าสนใจ"]];
+    const msgs=[["them","ฮัลโหล น้อง "+LEVELS[level].label+(picked.id==="cp"?"":" ที่จะไป"+picked.name)+" ใช่มั้ยคะ 😊"],["me","ใช่ครับ/ค่ะ…"],["them","พอดีระบบเราแจ้งว่าน้องมีแววเป็นโปรแกรมเมอร์ 98.7%"],["me","เอ๊ะ ระบบอะไร"],["them","ระบบที่รุ่นพี่เขียนเองนี่แหละ 😎 น้องก็เขียนได้นะ"],["me","…น่าสนใจ"]];
     let i=0;const chat=$("#chat");
     (function push(){ if(!document.body.contains(chat))return;
       if(i>=msgs.length){$("#cn").innerHTML=`<button class="btn" data-next>วางสาย (แต่ใจไปแล้ว)</button>`;wire();return}
@@ -372,7 +402,7 @@ const SCENES = [
   </div><p id="fb" aria-live="polite" style="margin:12px 0 0;font-weight:700"></p></div>`);
   let hits=0;$$(".opt").forEach(o=>o.onclick=()=>{
     if(o.dataset.ok==="1"){o.classList.add("right");tada();$("#qgif").innerHTML=gif("thumbs");$("#fb").textContent="ถูกต้อง! ✅ คุณมีพรสวรรค์ด้านนี้จริงๆ";later(next,1400)}
-    else{hits++;fail();o.classList.add("wrong","shake");later(()=>o.classList.remove("shake"),400);$("#qgif").innerHTML=gif("shock");
+    else{hits++;fail();o.classList.add("wrong","shake");later(()=>o.classList.remove("shake"),400);$("#qgif").innerHTML=gif(["shock","hamstare","doge"][Math.min(hits-1,2)]);
       $("#fb").textContent=["❌ ระบบไม่รู้จักคำตอบนี้","❌ ลองใหม่ เชื่อในตัวเอง","🤖 ระบบแก้คำตอบให้แล้ว"][Math.min(hits-1,2)];
       if(hits>=3){o.textContent="ง. Computer Programmer (ภาษาอังกฤษ)";o.dataset.ok="1";o.classList.remove("wrong")}}})},
 
@@ -388,7 +418,7 @@ const SCENES = [
     const res=["💻","💻",picked.id==="cp"?"🐱":picked.ico];
     [0,1,2].forEach(i=>{const r=$("#r"+i);r.classList.add("spin");const t=every(()=>{r.textContent=pool[Math.floor(Math.random()*pool.length)];beep(500+i*120,.02,"square",.02)},70);
       later(()=>{clearInterval(t);r.classList.remove("spin");r.textContent=res[i];beep(300,.08)},900+i*700)});
-    later(()=>{$("#smsg").textContent="เกือบ! 😿 ช่องสุดท้ายหลุด";$("#sgif").innerHTML=gbox("banana","max-width:220px");fail();
+    later(()=>{$("#smsg").textContent="เกือบ! 😿 ช่องสุดท้ายหลุด";$("#sgif").innerHTML=gbox("sadham","max-width:220px");fail();
       later(()=>{const r=$("#r2");r.classList.add("spin");later(()=>{r.classList.remove("spin");r.textContent="💻";
         $("#smsg").textContent="ระบบปัดเศษให้ 💻💻💻 JACKPOT!!";$("#sgif").innerHTML=gbox("happy","max-width:240px");tada();confetti();
         $("#pull").disabled=false;$("#pull").dataset.go=1;$("#pull").textContent="รับรางวัล → ไปต่อ"},700)},1400)},2500)}},
@@ -429,8 +459,8 @@ const SCENES = [
 
 /* 15 ยินดีด้วย */ ()=>{render(`
   <h1 class="center">🎉 ยินดีด้วย! 🎉</h1>
-  <p class="lead center">คุณได้รับเลือกเข้าสู่สาขา <b>คอมพิวเตอร์โปรแกรมเมอร์</b><br>(ไม่ว่าจะเลือกอะไรมาก็ตาม 555)</p>
-  <div class="duo"><div class="gifbox" style="max-width:none">${gif("dance")}</div><div class="gifbox" style="max-width:none">${gif("dj")}</div></div>
+  <p class="lead center">คุณได้รับเลือกเข้าสู่สาขา <b>คอมพิวเตอร์โปรแกรมเมอร์ ระดับ ${LEVELS[level].label}</b><br>(ไม่ว่าจะเลือกอะไรมาก็ตาม 555)</p>
+  <div class="duo"><div class="gifbox" style="max-width:none">${gif("dance")}</div><div class="gifbox" style="max-width:none">${gif("dogdance")}</div><div class="gifbox" style="max-width:none">${gif("rat")}</div><div class="gifbox" style="max-width:none">${gif("dj")}</div></div>
   <div class="term" id="term" aria-live="polite" style="margin-top:20px"></div>
   <div class="card" style="margin-top:22px"><h2 style="font-size:1.4rem">มาเรียนอะไรกันบ้าง?</h2>
     <div class="learn"><div>🌐 ทำเว็บไซต์</div><div>📱 สร้างแอปมือถือ</div><div>🎮 เขียนเกม</div><div>🗄️ ฐานข้อมูล</div><div>🤖 AI & IoT</div><div>💸 รับงานฟรีแลนซ์ได้</div></div>
@@ -461,7 +491,7 @@ cc.onclick=()=>{meow();cc.classList.remove("on");toast("🐈‍⬛ แมวท�
 
 /* ---------- easter eggs ---------- */
 function catRain(){ if(matchMedia("(prefers-reduced-motion: reduce)").matches)return; meow();
-  const em=["🐱","😹","😻","🙀","😼","💻","🐈"];for(let i=0;i<40;i++){const d=document.createElement("div");d.className="rain";d.textContent=em[i%em.length];
+  const em=["🐱","😹","🐶","🦛","🐹","💻","🐭"];for(let i=0;i<40;i++){const d=document.createElement("div");d.className="rain";d.textContent=em[i%em.length];
     d.style.left=Math.random()*100+"vw";d.style.animationDuration=(2+Math.random()*2.5)+"s";d.style.animationDelay=Math.random()*1.5+"s";document.body.appendChild(d);setTimeout(()=>d.remove(),6000)}}
 let buf="";addEventListener("keydown",e=>{buf=(buf+e.key.toLowerCase()).slice(-12);
   if(buf.endsWith("meow")){catRain();toast("🐾 เมี๊ยววว! คุณค้นพบ Easter Egg — แบบนี้แหละเรียกว่าโค้ดลับ")}
