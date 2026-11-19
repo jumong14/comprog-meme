@@ -135,6 +135,49 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:20px}
 @keyframes fall{to{transform:translateY(115vh) rotate(360deg)}}
 .trail{position:fixed;pointer-events:none;z-index:44;font-size:1rem;animation:fade .7s forwards}
 @keyframes fade{to{opacity:0;transform:translateY(-16px) scale(.6)}}
+.pov{background:#0F172A;color:#fff;display:inline-block;padding:6px 14px;border-radius:10px;font-weight:600;margin:0 0 14px;transform:rotate(-1deg)}
+.hint{color:var(--muted);font-weight:600}
+.calc{max-width:300px;margin:0 auto;background:#334155;border:var(--border);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
+.disp{background:#d9f99d;color:#0F172A;font-family:ui-monospace,Consolas,monospace;font-size:1.3rem;text-align:right;padding:12px;border-radius:10px;min-height:52px;margin-bottom:10px;border:2px solid #0F172A;overflow:hidden}
+.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.keys button{all:unset;cursor:pointer;background:#fff;border:2px solid #0F172A;border-radius:10px;min-height:48px;display:grid;place-items:center;font-weight:800;font-size:1.2rem;box-shadow:2px 2px 0 #0F172A}
+.keys button:active{transform:translate(2px,2px);box-shadow:none}.keys .eq{background:var(--primary)}
+.keys button:focus-visible,.file:focus-visible,.room:focus-visible,.fl:focus-visible,.hole:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+label{display:block;font-weight:600;margin:8px 0}select,input[type=color]{font:inherit;padding:6px 10px;border:2px solid var(--fg);border-radius:8px;margin-left:6px;min-height:40px;background:#fff}
+.post{background:#fff;border:var(--border);border-radius:14px;padding:14px;margin-top:14px;box-shadow:var(--shadow)}.post .ph{margin-bottom:6px}.post p{font-size:1.15rem;margin:6px 0}
+.stats{color:var(--muted);font-weight:600}.glitch{animation:shake .3s 3}
+.receipt{background:#fff;font-family:ui-monospace,Consolas,monospace;max-width:340px;margin:16px auto;padding:16px;border:2px dashed #0F172A;box-shadow:var(--shadow)}.rl{display:flex;justify-content:space-between;gap:6px}
+.desk{background:linear-gradient(135deg,#1d4ed8,#7c3aed);border:var(--border);border-radius:var(--radius);padding:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;min-height:200px;box-shadow:var(--shadow)}
+.file{all:unset;cursor:pointer;color:#fff;text-align:center;font-size:2rem;padding:6px;border-radius:8px;transition:transform .25s}.file small{font-size:.75rem;word-break:break-all}.file:hover{background:rgba(255,255,255,.15)}
+.folder{font-weight:800;font-size:1.1rem;padding:10px 14px;border:var(--border);border-radius:12px;background:#fde68a}
+.washer{width:min(260px,70vw);margin:10px auto;background:#e2e8f0;border:var(--border);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
+.washer .panel{background:#0F172A;color:#4ADE80;font-family:ui-monospace,Consolas,monospace;padding:8px;border-radius:8px;font-size:.85rem;min-height:2.6em;margin-bottom:12px}
+.drum{width:180px;height:180px;margin:0 auto;border-radius:50%;border:10px solid #94a3b8;background:radial-gradient(#bae6fd,#38bdf8);display:grid;place-items:center;font-size:2.4rem}
+.spin2{animation:spin .4s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}
+.room{all:unset;cursor:pointer;text-align:center;padding:14px 8px;border:var(--border);border-radius:12px;background:#fee2e2;font-weight:800;box-shadow:3px 3px 0 var(--fg)}.room.free{background:#bbf7d0}
+.ticket,.achv{margin-top:16px;padding:18px;border:var(--border);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);line-height:1.8}
+.achv{background:#0F172A;color:#fff;text-align:center;font-size:1.1rem;animation:pop .4s}
+.board{width:100%;border-collapse:collapse;background:#111;color:#facc15;font-family:ui-monospace,Consolas,monospace;border:var(--border);box-shadow:var(--shadow)}
+.board th,.board td{padding:10px;border-bottom:1px solid #333;text-align:left}.board th{color:#fff}
+.fl{all:unset;cursor:pointer;color:#facc15;text-decoration:underline;font-family:"Kanit",sans-serif;min-height:32px}
+.pan{font-size:5rem;text-align:center;margin:10px 0}
+.dprev{margin-top:12px;padding:24px;border-radius:12px;border:2px solid var(--fg);background:var(--primary);font-size:1.3rem;font-weight:800;text-align:center;transition:all .3s}
+.pad{display:block;width:100%;background:#fff;border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);touch-action:none;cursor:crosshair}
+.model{display:flex;flex-direction:column;align-items:center;gap:6px;margin:10px auto;padding:20px;width:min(260px,70vw);border:var(--border);border-radius:var(--radius);background:linear-gradient(#fdf2f8,#fff);box-shadow:var(--shadow)}
+.model span{font-size:6rem;line-height:1}.model small{font-weight:700}
+.gps{border:var(--border);border-radius:var(--radius);background:#dcfce7;padding:18px;box-shadow:var(--shadow)}
+.road{position:relative;height:60px;background:#475569;border-radius:30px;margin-bottom:12px}
+.road::after{content:"";position:absolute;left:5%;right:5%;top:28px;border-top:4px dashed #fff}
+#car{position:absolute;left:0;top:8px;font-size:2rem;transition:left .07s linear;transform:scaleX(-1);z-index:1}.flag{position:absolute;right:8px;top:8px;font-size:2rem}
+.holes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:360px;margin:0 auto}
+.hole{all:unset;cursor:pointer;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(#334155 55%,#64748b);border:var(--border);display:grid;place-items:center;font-size:2.6rem}
+.arena2{position:relative;min-height:330px}
+.win{position:absolute;width:min(260px,80%);background:#fff;border:2px solid #0F172A;border-radius:8px;box-shadow:5px 5px 0 #0F172A;animation:pop .2s}
+.win .wt{background:#2563EB;color:#fff;padding:4px 8px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.win .wt button{all:unset;cursor:pointer;background:#DC2626;color:#fff;width:32px;height:28px;display:grid;place-items:center;border-radius:4px}
+.win .wb{padding:16px;font-weight:700}
+
 </style>
 </head>
 <body>
@@ -239,7 +282,13 @@ document.getElementById("sndBtn").onclick=e=>{muted=!muted;e.currentTarget.textC
 
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),2600)}
 function render(html){clearAll();stage.innerHTML=`<section class="scene">${html}</section>`;stage.focus({preventScroll:true});window.scrollTo({top:0,behavior:"smooth"})}
-function next(){sceneIdx++;stepEl.textContent=`ด่าน ${sceneIdx+1}/${SCENES.length}`;SCENES[sceneIdx]()}
+let FLOW=[];
+function next(){sceneIdx++;stepEl.textContent=`ด่าน ${sceneIdx+1}/${FLOW.length}`;FLOW[sceneIdx]()}
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function buildFlow(){const S=SCENES;
+  const must=[S[12],S[7],S[4]];                       // คลิป TikTok, แมวชกมวย, รูปแมว (มีมของผู้ใช้) ออกทุกรอบ
+  const pool=[S[1],S[2],S[3],S[5],S[6],S[8],S[9],S[10],S[11],S[13],popupScene];
+  FLOW=[S[0],U[picked.id],...shuffle([...must,...shuffle(pool).slice(0,4)]),S[14],S[15]]}
 const nextBtn=(label,cls="")=>`<div class="row" style="justify-content:center"><button class="btn ${cls}" data-next>${label}</button></div>`;
 const wire=()=>$$("[data-next]").forEach(b=>b.onclick=next);
 
@@ -255,8 +304,164 @@ function home(){
     </div>
     <div class="grid">${L.list.map(([id,name,type],i)=>`<button class="major" data-i="${i}"><span class="ico" aria-hidden="true">${R[id].ico}</span><b>${name}</b><small>${type} · ${R[id].sub}</small></button>`).join("")}</div>`);
   $$("[data-lv]").forEach(b=>b.onclick=()=>{level=b.dataset.lv;home()});
-  $$(".major").forEach(b=>b.onclick=()=>{const [id,name]=L.list[+b.dataset.i];picked={id,name,...R[id]};meow();next()});
+  $$(".major").forEach(b=>b.onclick=()=>{const [id,name]=L.list[+b.dataset.i];picked={id,name,...R[id]};buildFlow();meow();next()});
 }
+
+/* ===== ลูกเล่นเฉพาะแต่ละสาขา ===== */
+const say=t=>{ if(muted)return; try{const u=new SpeechSynthesisUtterance(t);u.lang="th-TH";u.rate=1.05;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){} };
+const pov=t=>`<p class="pov">${t}</p>`;
+const done=(html,label="ไปต่อ →")=>{const d=$("#udone");d.innerHTML=html+nextBtn(label);wire();tada()};
+const U = {
+/* บัญชี: เครื่องคิดเลขพัง */
+acc:()=>{render(`<h2>เครื่องคิดเลขสำหรับนักบัญชี 🧮</h2>${pov("POV: ปิดงบตอนตีสอง แล้วเครื่องคิดเลขเริ่มมีความคิดเป็นของตัวเอง")}
+  <div class="calc"><div class="disp" id="disp" aria-live="polite">0</div>
+  <div class="keys">${["7","8","9","÷","4","5","6","×","1","2","3","-","C","0","=","+"].map(k=>`<button data-k="${k}" class="${k==="="?"eq":""}">${k}</button>`).join("")}</div></div>
+  <p class="center hint">ลองคิดเลขอะไรก็ได้ แล้วกด =</p><div id="udone"></div>`);
+  let ex="",n=0;const d=$("#disp");const out=["11 (บวกแบบ string 😅)","เงินหายไป 3 บาท 💸","42 (คำตอบของทุกสิ่ง)","คอมโปร 💻"];
+  $$(".keys button").forEach(b=>b.onclick=()=>{const k=b.dataset.k;
+    if(k==="C"){ex="";d.textContent="0";return}
+    if(k!=="="){ex+=k;d.textContent=ex;return}
+    d.textContent=out[Math.min(n,3)];n++;fail();ex="";
+    if(n===4)done(`<div class="card center"><b>เครื่องคิดเลขนี้เขียนโดยคนที่ยังไม่ได้เรียนคอมโปร 🤡</b><br>อยากเขียนโปรแกรมที่คิดเลขถูก แถมทำงบให้อัตโนมัติ? มาสายนี้</div>`)})},
+
+/* การตลาด: ยิงแอด */
+mkt:()=>{render(`<h2>ระบบยิงแอดอัจฉริยะ 📢</h2>${pov("Nobody:<br>อัลกอริทึม: ฉันรู้ว่าคุณอยากได้อะไร 😏")}
+  <div class="card"><label>สินค้า <select id="prod"><option>ชานมไข่มุก 🧋</option><option>รองเท้าผ้าใบ 👟</option><option>ครีมหน้าใส ✨</option><option>หมูกระทะ 🥓</option></select></label>
+  <label>กลุ่มเป้าหมาย <select id="tg"><option>วัยรุ่นสายเที่ยว</option><option>แม่บ้านสายช้อป</option><option>เกมเมอร์ตีสาม</option></select></label>
+  <button class="btn" id="fire" style="margin-top:10px">🚀 ยิงแอด</button></div>
+  <div class="post" id="post" hidden><div class="ph"><b>วอศ.สุพรรณบุรี</b> <small>· ได้รับการสนับสนุน</small></div><p id="adtxt"></p>
+  <div class="stats">👍 <span id="lk">0</span> · 🔁 <span id="sh">0</span> · 💬 <span id="cm">0</span></div></div><div id="udone"></div>`);
+  $("#fire").onclick=()=>{const p=$("#prod").value;$("#post").hidden=false;$("#adtxt").textContent=`📣 ${p} ลด 50% วันนี้วันเดียว!`;beep(700,.1);
+    later(()=>{$("#adtxt").innerHTML=`<span class="glitch">📣 สมัครเรียน <b>คอมพิวเตอร์โปรแกรมเมอร์</b> ฟรีค่าเท่ 100% 💻</span>`;fail();
+      let v=0;const t=every(()=>{v+=Math.ceil(Math.random()*4321);$("#lk").textContent=v.toLocaleString();$("#sh").textContent=Math.floor(v/7).toLocaleString();$("#cm").textContent=Math.floor(v/13).toLocaleString();
+        if(v>99000){clearInterval(t);done(`<div class="card center">อัลกอริทึมเปลี่ยนแอดให้เอง เพราะมันรู้ว่า… <b>คุณอยากเป็นคนเขียนอัลกอริทึม</b> 😎</div>`)}},60)},1300)}},
+
+/* ค้าปลีก: เครื่อง POS */
+retail:()=>{const items=[["🥤","น้ำเปล่า",10],["🍜","มาม่า",7],["🍞","ขนมปัง",20],["🧴","แชมพู",59]];
+  render(`<h2>แคชเชียร์มือใหม่ 🛒</h2>${pov("POV: สแกนบาร์โค้ดวันแรก แล้วระบบ POS เพี้ยน")}
+  <div class="row" style="justify-content:center">${items.map((it,i)=>`<button class="btn alt" data-it="${i}">${it[0]} ${it[1]} ฿${it[2]}</button>`).join("")}</div>
+  <div class="receipt" id="rc" aria-live="polite"><b>ร้านวอศ.มาร์ท</b><br>------------------------<br></div><div id="udone"></div>`);
+  let n=0;$$("[data-it]").forEach(b=>b.onclick=()=>{ if(n>=4)return; n++;beep(1500,.06,"sine",.06);
+    $("#rc").insertAdjacentHTML("beforeend",`<div class="rl"><s>${items[b.dataset.it][1]}</s> → 💻 คอร์สคอมโปร <span>฿0</span></div>`);
+    if(n===3){$("#rc").insertAdjacentHTML("beforeend",`------------------------<br><b>ยอดรวม: อนาคตสายโค้ด ฿∞</b><br><small>ขอบคุณที่ใช้บริการ ระบบนี้รอคนเรียนคอมโปรมาแก้ 🛠️</small>`);
+      done(`<div class="card center">ระบบหน้าร้าน สต็อก แอปสะสมแต้ม… <b>ทั้งหมดเขียนโดยโปรแกรมเมอร์</b> 🧑‍💻</div>`)}})},
+
+/* สำนักงานดิจิทัล: จัดไฟล์ */
+office:()=>{const files=["รายงาน_final.docx","รายงาน_final_จริง.docx","รายงาน_final_จริงๆ_ล่าสุด.docx","งบ_แก้ครั้งที่8.xlsx","ห้ามลบ!!!.pdf","ใหม่(1)(2).txt"];
+  render(`<h2>ช่วยจัดไฟล์บนเดสก์ท็อปหน่อย 🗂️</h2>${pov("ทุกคนเคยมีไฟล์ชื่อ final_final_จริงๆ 🫠")}
+  <div class="desk" id="desk">${files.map((f,i)=>`<button class="file" data-f="${i}">📄<br><small>${f}</small></button>`).join("")}</div>
+  <div class="row" style="justify-content:center"><span class="folder" id="fold">📁 เอกสาร (<span id="fc">0</span>)</span><button class="btn blue" id="auto">🤖 ให้โค้ดจัดให้</button></div>
+  <pre class="term" id="script" hidden></pre><div id="udone"></div>`);
+  let c=0,runs=0;const fin=()=>{$("#fold").innerHTML="📁 คอมโปร_จัดให้อัตโนมัติ ✅";done(`<div class="card center">คลิกทีละไฟล์มันเหนื่อย… <b>เขียนสคริปต์ 3 บรรทัดจัดได้ทั้งเครื่อง</b> นี่แหละพลังคอมโปร</div>`)};
+  $$(".file").forEach(f=>f.onclick=()=>{ if(runs<2&&Math.random()<.6){runs++;f.style.transform=`translate(${(Math.random()-.5)*160}px,${(Math.random()-.5)*60}px) rotate(${(Math.random()-.5)*40}deg)`;toast("ไฟล์หนี! 🏃");return}
+    f.remove();$("#fc").textContent=++c;beep(600,.05);if(c===files.length)fin()});
+  $("#auto").onclick=()=>{$("#script").hidden=false;$("#script").textContent='for (const f of desktop.files) {\n  f.moveTo("เอกสาร/" + f.type);\n}  // เสร็จใน 0.01 วินาที ⚡';$$(".file").forEach(f=>f.remove());$("#fc").textContent=files.length;$("#auto").disabled=true;fin()}},
+
+/* คหกรรม: เครื่องซักผ้า */
+home:()=>{render(`<h2>เครื่องซักผ้าอัจฉริยะ 🧺</h2>${pov("เครื่องซักผ้าทุกวันนี้ก็มี “โปรแกรม” นะ… ใครเขียนล่ะ? 👀")}
+  <div class="washer"><div class="panel"><span id="wd" aria-live="polite">เลือกโปรแกรมซัก</span></div><div class="drum" id="drum">👕👖🧦</div></div>
+  <div class="row" style="justify-content:center">${["ผ้าขาว","ผ้าสี","ผ้าบอบบาง","ผ้าชุดนักเรียน"].map(p=>`<button class="btn alt" data-w="${p}">${p}</button>`).join("")}</div><div id="udone"></div>`);
+  let busy=false;$$("[data-w]").forEach(b=>b.onclick=()=>{ if(busy)return;busy=true;$("#wd").textContent=`โปรแกรม: ${b.dataset.w}`;$("#drum").classList.add("spin2");
+    const t=every(()=>beep(120,.08,"sawtooth",.03),200);
+    later(()=>{$("#wd").textContent="⚠ เปลี่ยนเป็นโปรแกรม: คอมพิวเตอร์โปรแกรมเมอร์";fail()},1500);
+    later(()=>{clearInterval(t);$("#drum").classList.remove("spin2");$("#drum").textContent="🧥🧥🧥";$("#wd").textContent="ซักเสร็จ! ได้ฮู้ดโปรแกรมเมอร์ x7";
+      done(`<div class="card center">เสื้อฮู้ดเหมือนกัน 7 ตัว ใส่วันละตัว = <b>ชุดประจำสายโค้ด</b> 😎<br><small>(และโปรแกรมซักผ้า คนเขียนก็คือโปรแกรมเมอร์)</small></div>`)},3200)})},
+
+/* โรงแรม: จองห้อง */
+htl:()=>{const rooms=["101","102","103","201","202","203","301","302","303","404"];
+  render(`<h2>ระบบจองห้องพัก 🏨</h2>${pov("ช่วงไฮซีซั่น: ห้องเต็มทุกห้อง… ยกเว้นห้องเดียว")}
+  <div class="rooms">${rooms.map(r=>`<button class="room ${r==="404"?"free":""}" data-r="${r}">ห้อง ${r}<br><small>${r==="404"?"✅ Comprog Suite":"❌ เต็ม"}</small></button>`).join("")}</div><div id="udone"></div>`);
+  const ex=["เต็มค่ะ 🙏","มีแขกชื่อ “บั๊ก” พักอยู่","ห้องนี้ไม่มี Wi-Fi 😱","ปิดปรับปรุง (โค้ดพัง)","จองไว้ให้คนเรียนคอมโปร"];
+  $$(".room").forEach(b=>b.onclick=()=>{ if(b.dataset.r!=="404"){fail();b.classList.add("shake");later(()=>b.classList.remove("shake"),400);toast(ex[Math.floor(Math.random()*ex.length)]);return}
+    say("จองสำเร็จ ห้องสี่ศูนย์สี่ ยินดีต้อนรับ");done(`<div class="ticket"><b>✅ ยืนยันการจอง</b><br>ห้อง 404 — <i>Not Found… แต่เจอแล้ว!</i><br>Check-in: วันเปิดเทอม · แผนกคอมพิวเตอร์โปรแกรมเมอร์</div>`)})},
+
+/* ท่องเที่ยว: กระดานเที่ยวบิน */
+trv:()=>{const fl=[["TG101","โตเกียว 🇯🇵"],["KE652","โซล 🇰🇷"],["AF171","ปารีส 🇫🇷"],["FD3204","เชียงใหม่ 🏔️"],["CP404","แผนกคอมโปร 💻"]];
+  render(`<h2>ขาออก DEPARTURES ✈️</h2>${pov("ตอนอยากเที่ยวรอบโลก แต่ไฟลต์ที่ว่างมีแค่ไฟลต์เดียว")}
+  <table class="board"><thead><tr><th>เที่ยวบิน</th><th>ปลายทาง</th><th>สถานะ</th></tr></thead><tbody>
+  ${fl.map((f,i)=>`<tr><td>${f[0]}</td><td><button class="fl" data-i="${i}">${f[1]}</button></td><td id="st${i}">${i===4?"ON TIME ✅":"BOARDING"}</td></tr>`).join("")}</tbody></table><div id="udone"></div>`);
+  const scr=(el,txt)=>{let k=0;const ch="█▓▒░#@$%&";const t=every(()=>{el.textContent=k++<8?[...txt].map(()=>ch[Math.floor(Math.random()*ch.length)]).join(""):txt;if(k>8)clearInterval(t);beep(1200,.01,"square",.02)},50)};
+  $$(".fl").forEach(b=>b.onclick=()=>{const i=+b.dataset.i;
+    if(i<4){scr($("#st"+i),["CANCELLED ❌","DELAYED 99 ชม.","บินไปแล้ว 🛫","เครื่องติดบั๊ก 🐛"][i]);fail();return}
+    say("ผู้โดยสารเที่ยวบิน ซีพี สี่ศูนย์สี่ ปลายทางแผนกคอมพิวเตอร์โปรแกรมเมอร์ เชิญขึ้นเครื่องได้");
+    done(`<div class="ticket"><b>🎫 BOARDING PASS</b><br>จาก: สุพรรณบุรี → ถึง: <b>คอมพิวเตอร์โปรแกรมเมอร์</b><br>Gate: C0D3 · ที่นั่ง: &lt;/&gt; · ชั้น: Dark Mode<br><small>โปรแกรมเมอร์ทำงานรีโมตได้ เที่ยวไปทำงานไปได้จริงนะ 🏝️</small></div>`)})},
+
+/* อาหาร: ทำข้าวผัด */
+food:()=>{const ing=["🍚 ข้าว","🥚 ไข่","🧄 กระเทียม","🌶️ พริก","🥓 หมู","🧂 เกลือ"];
+  render(`<h2>ครัวสายโค้ด 🍳</h2>${pov("สูตรอาหาร = ทำตามขั้นตอนเป๊ะๆ = อัลกอริทึม 🤯")}
+  <p class="hint center">เลือกวัตถุดิบ 3 อย่าง แล้วกดผัด!</p>
+  <div class="row" style="justify-content:center">${ing.map((x,i)=>`<button class="btn alt" data-g="${i}" aria-pressed="false">${x}</button>`).join("")}</div>
+  <div class="pan" id="pan">🍳</div><div class="row" style="justify-content:center"><button class="btn" id="cook" disabled>🔥 ผัด!</button></div>
+  <pre class="term" id="code" hidden></pre><div id="udone"></div>`);
+  const sel=new Set();$$("[data-g]").forEach(b=>b.onclick=()=>{const i=+b.dataset.g;if(sel.has(i)){sel.delete(i);b.classList.add("alt")}else if(sel.size<3){sel.add(i);b.classList.remove("alt")}
+    b.setAttribute("aria-pressed",sel.has(i));$("#cook").disabled=sel.size<3});
+  $("#cook").onclick=()=>{$("#cook").disabled=true;$("#pan").classList.add("shake");const t=every(()=>beep(200+Math.random()*100,.05,"sawtooth",.02),90);
+    const names=[...sel].map(i=>ing[i].split(" ")[1]);
+    later(()=>{clearInterval(t);$("#pan").classList.remove("shake");$("#code").hidden=false;
+      $("#code").textContent=`function ข้าวผัด() {\n  const กระทะ = ร้อน(180);\n  return ผัด(${names.join(", ")})\n}\n\n❌ SyntaxError: ลืมใส่ ; กับซีอิ๊ว`;fail();
+      later(()=>{$("#pan").textContent="🍛";done(`<div class="card center">ได้ <b>“ข้าวผัดจาวาสคริปต์”</b> 1 จาน 🍛<br>ทำอาหารเก่ง = คิดเป็นขั้นตอนเก่ง = <b>มีแววเขียนโปรแกรม!</b></div>`)},1200)},1600)}},
+
+/* การออกแบบ: เลือกสี/ฟอนต์ */
+design:()=>{render(`<h2>Design Studio 🎨✏️</h2>${pov("ลูกค้า: ขอสีขาวที่ดูดำๆ หน่อย<br>ดีไซเนอร์: 🙂🔪")}
+  <div class="card"><label>เลือกสี <input type="color" id="cl" value="#ec4899"></label>
+  <label>เลือกฟอนต์ <select id="ft"><option>Comic Sans</option><option>Times New Roman</option><option>ลายมือแม่</option></select></label>
+  <div class="dprev" id="dp">งานออกแบบของฉัน ✨</div><p id="dl" class="hint" aria-live="polite">ลองเปลี่ยนสีกับฟอนต์ดู</p></div><div id="udone"></div>`);
+  let ch=0;const go=()=>{ch++;fail();$("#dp").style.background="#0B1220";$("#dp").style.color="#4ADE80";$("#dp").style.fontFamily="Consolas,monospace";$("#dp").textContent="<งานออกแบบ ของ=\"ฉัน\" />";
+    $("#dl").textContent=["สีที่ได้: #C0DE (อ่านว่า โค้ด) 🤨","ฟอนต์ที่ได้: Consolas (ฟอนต์ประจำสายโค้ด)","ระบบบังคับ Dark mode ให้แล้ว 🌚"][Math.min(ch-1,2)];
+    if(ch===2)done(`<div class="card center">ดีไซน์สวยแค่ไหน ถ้าไม่มีคนเขียนโค้ด <b>ปุ่มก็กดไม่ได้</b> 🥲<br>สายโค้ด = ทำให้งานออกแบบมีชีวิต</div>`)};
+  $("#cl").oninput=$("#cl").onchange=()=>{ if(ch<1)go()};$("#ft").onchange=()=>{ if(ch<2){if(ch<1)go();go()}}},
+
+/* ดิจิทัลกราฟิก: วาดให้ AI ทาย */
+gfx:()=>{render(`<h2>วาดอะไรก็ได้ ให้ AI ทาย 🖌️</h2>${pov("ฉัน: วาดแมว<br>AI: 🤔")}
+  <canvas id="pad" width="500" height="300" class="pad" aria-label="พื้นที่วาดรูป ใช้เมาส์หรือนิ้ววาด"></canvas>
+  <div class="row" style="justify-content:center"><button class="btn alt" id="clr">🧽 ลบ</button><button class="btn" id="guess">🤖 ให้ AI ทาย</button></div>
+  <div id="ai" aria-live="polite"></div><div id="udone"></div>`);
+  const c=$("#pad"),x=c.getContext("2d");x.lineWidth=6;x.lineCap="round";x.strokeStyle="#0F172A";let dn=false;
+  const p=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)*c.width/r.width,(e.clientY-r.top)*c.height/r.height]};
+  c.onpointerdown=e=>{dn=true;x.beginPath();x.moveTo(...p(e))};c.onpointermove=e=>{if(dn){x.lineTo(...p(e));x.stroke()}};c.onpointerup=c.onpointerleave=()=>dn=false;
+  $("#clr").onclick=()=>x.clearRect(0,0,c.width,c.height);
+  $("#guess").onclick=()=>{$("#ai").innerHTML=`<div class="bar"><i id="aib"></i></div>`;let v=0;const t=every(()=>{v+=7;$("#aib").style.width=v+"%";if(v>=100){clearInterval(t);
+    say("ผลการวิเคราะห์ คอมพิวเตอร์โปรแกรมเมอร์ เก้าสิบแปดเปอร์เซ็นต์");
+    $("#ai").innerHTML=`<div class="card"><b>ผลวิเคราะห์ภาพ:</b><br>💻 คอมพิวเตอร์โปรแกรมเมอร์ — 98.7%<br>🐱 แมว — 1.2%<br>🎨 งานศิลปะ — 0.1%</div>`;
+    done(`<div class="card center">AI ทายภาพได้เพราะ <b>มีคนเขียนโปรแกรมให้มัน</b> 🤖 อยากสร้าง AI เองไหม?</div>`)}},60)}},
+
+/* แฟชั่น: แต่งตัว */
+fsh:()=>{const outs=[["👗","เดรสออกงาน"],["🤵","สูทหล่อ"],["👘","ชุดไทย"],["🩳","ชุดเที่ยวทะเล"]];
+  render(`<h2>ห้องแต่งตัว 👗</h2>${pov("แฟชั่นวีคของสายโค้ด: ฮู้ดสีเดียว ใส่ 7 วัน 7 ตัว (เหมือนกันทุกตัว)")}
+  <div class="model" id="mdl" aria-live="polite"><span id="mo">🧍</span><small id="ml">เลือกชุดเลย</small></div>
+  <div class="row" style="justify-content:center">${outs.map((o,i)=>`<button class="btn alt" data-o="${i}">${o[0]} ${o[1]}</button>`).join("")}</div><div id="udone"></div>`);
+  let n=0;$$("[data-o]").forEach(b=>b.onclick=()=>{const o=outs[b.dataset.o];$("#mo").textContent=o[0];$("#ml").textContent=o[1]+" ✨";beep(800,.05);
+    later(()=>{$("#mo").textContent="🧑‍💻";$("#ml").textContent="ฮู้ดดี้โปรแกรมเมอร์ (Dark mode edition) 🧥";fail();n++;
+      if(n===2)done(`<div class="card center">ไม่ว่าจะเลือกชุดไหน… <b>ลุคสุดท้ายก็ฮู้ดดี้ + แว่น + กาแฟ ☕</b><br>ยินดีต้อนรับสู่แฟชั่นสายโค้ด</div>`)},800)})},
+
+/* เทคโนโลยีธุรกิจดิจิทัล: GPS */
+dbt:()=>{render(`<h2>กำลังนำทางไป: ${picked.name} 🗺️</h2>${pov("Google Maps ตอนรู้ว่าคุณควรไปไหนมากกว่าคุณ")}
+  <div class="gps"><div class="road"><span id="car">🚗</span><span class="flag">🏁</span></div><p id="nav" aria-live="polite">อีก 500 ม. ถึงจุดหมาย</p></div>
+  <div class="row" style="justify-content:center"><button class="btn" id="drive">▶ ออกเดินทาง</button></div><div id="udone"></div>`);
+  $("#drive").onclick=()=>{$("#drive").disabled=true;let v=0;const t=every(()=>{v+=2;$("#car").style.left=Math.min(v,88)+"%";$("#nav").textContent=`อีก ${Math.max(0,500-v*5)} ม. ถึง ${picked.name}`;
+    if(v===80){clearInterval(t);say("กำลังคำนวณเส้นทางใหม่ กรุณากลับรถ");$("#nav").textContent="🔄 กำลังคำนวณเส้นทางใหม่… กรุณากลับรถ";fail();
+      later(()=>{$("#nav").innerHTML="📍 จุดหมายใหม่: <b>คอมพิวเตอร์โปรแกรมเมอร์</b> (ห้องข้างๆ เดินอีก 3 ก้าว)";$("#car").style.left="96%";
+        done(`<div class="card center">ธุรกิจดิจิทัลกับคอมโปรอยู่ใกล้กันมาก… <b>ขยับอีกนิดเดียวก็ได้เป็นคนสร้างระบบเองแล้ว</b> 😏</div>`)},1800)}},70)}},
+
+/* คอมโปร: ตีบั๊ก */
+cp:()=>{render(`<h2>ตาถึงมาก! 😎 มาพิสูจน์ฝีมือ: ตีบั๊ก 🐛</h2>${pov("Nobody:<br>โค้ดของฉันตอนตีสอง: 🐛🐛🐛🐛")}
+  <p class="hint center">ตีบั๊กให้ได้ 8 ตัว! คะแนน: <b id="bs">0</b></p>
+  <div class="holes">${Array.from({length:9},(_,i)=>`<button class="hole" data-h="${i}" aria-label="หลุม ${i+1}"></button>`).join("")}</div><div id="udone"></div>`);
+  let s=0,cur=-1;const hs=$$(".hole");const pop=()=>{hs.forEach(h=>h.textContent="");cur=Math.floor(Math.random()*9);hs[cur].textContent="🐛"};
+  const t=every(pop,750);pop();
+  hs.forEach((h,i)=>h.onclick=()=>{ if(i!==cur)return; h.textContent="💥";cur=-1;beep(300,.08,"square",.05);$("#bs").textContent=++s;
+    if(s===8){clearInterval(t);hs.forEach(h=>h.textContent="✅");say("ปลดล็อกความสำเร็จ ดีบักเกอร์ตัวจริง");
+      done(`<div class="achv">🏆 <b>Achievement Unlocked</b><br>ดีบักเกอร์ตัวจริง — เลือกถูกตั้งแต่ครั้งแรก</div>`)}})},
+};
+
+/* ===== มีมกลางเพิ่ม: ป๊อปอัปเตือนรัวๆ ===== */
+const popupScene=()=>{render(`<h2>ระบบกำลังยืนยันการเลือกสาขา…</h2><div class="arena2" id="ar"></div><div id="udone"></div>`);
+  const msgs=["คุณแน่ใจหรือ?","แน่ใจจริงๆ หรือ?","แน่ใจจริงๆ จริงๆ หรือ?","ลองคิดอีกทีไหม?","คอมโปรก็ดีนะ 🥺","ยังไม่เปลี่ยนใจอีกหรอ","โอเค ระบบเหนื่อยแล้ว","ระบบ: งั้นเลือกคอมโปรให้นะ 💻"];
+  let i=0,closed=0;const ar=$("#ar");
+  const spawn=()=>{ if(i>=msgs.length)return;const w=document.createElement("div");w.className="win";w.style.left=(8+i*4)%60+"%";w.style.top=(i*28)+"px";
+    w.innerHTML=`<div class="wt">⚠ คำเตือน <button aria-label="ปิด">✕</button></div><div class="wb">${msgs[i]}</div>`;ar.appendChild(w);fail();const me=i++;
+    w.querySelector("button").onclick=()=>{w.remove();closed++;spawn();spawn();if(me===msgs.length-1||closed>=6){ar.innerHTML="";done(`<div class="card center">ปิดป๊อปอัปไม่ทันเลยใช่ไหม? 🫠 <b>มาเรียนเขียนโปรแกรม แล้วจะเป็นคนสร้างป๊อปอัปเอง</b></div>`)}}};
+  spawn()};
 
 const SCENES = [
 /* 1 roast */ ()=>{render(`
@@ -467,7 +672,7 @@ const SCENES = [
     <p style="margin:16px 0 0">สนใจสมัคร ติดต่อ <b>แผนกวิชาคอมพิวเตอร์โปรแกรมเมอร์ วิทยาลัยอาชีวศึกษาสุพรรณบุรี</b> หรือทักครูแนะแนวได้เลย!</p></div>
   <div class="row" style="justify-content:center"><button class="btn blue" id="again">🔁 เล่นอีกรอบ (ผลเหมือนเดิมนะ)</button><button class="btn alt" id="rainBtn">🐱 ฝนแมว</button></div>`);
   $("#again").onclick=home;$("#rainBtn").onclick=catRain;confetti();tada();
-  const lines=[`> student.choose("${picked.name}")`,`⚠ Redirecting... (x16)`,`> student.join("คอมพิวเตอร์โปรแกรมเมอร์")`,`✔ Success! Welcome to the team 🚀`];
+  const lines=[`> student.choose("${picked.name}")`,`⚠ Redirecting... (x${FLOW.length})`,`> student.join("คอมพิวเตอร์โปรแกรมเมอร์")`,`✔ Success! Welcome to the team 🚀`];
   const term=$("#term");let li=0,ci=0,out="";
   (function type(){ if(!document.body.contains(term))return;
     if(li>=lines.length){term.innerHTML=out+'<span class="cursor">&nbsp;</span>';return}
